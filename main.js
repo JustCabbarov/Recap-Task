@@ -66,81 +66,87 @@ for (let i = 2; i < 100; i++) {
 // 2)
 let sampleNews = `As software developers, the natural tendency is to start developing applications based on your own hands on experience and knowledge right away. 
 However, overtime issues in the application arise, adaptations to changes,and new features happen.`;
-let countSapce=sampleNews.split(" ").length-1;
+let countSapce = sampleNews.split(" ").length - 1;
 console.log(countSapce);
 
 
 // 3) 
- const fruits = ["alma", "banan", "qarpız", " portağal  ", "ananas", "nar"];
- let sortedList=fruits.sort((x,y)=>x.length-y.length )
- console.log(sortedList[sortedList.length-1]);
- 
+const fruits = ["alma", "banan", "qarpız", " portağal  ", "ananas", "nar"];
+let sortedList = fruits.sort((x, y) => x.length - y.length)
+console.log(sortedList[sortedList.length - 1]);
+
 // 4) 
+
+
+
 
 
 
 
 // 5) Verilən bir cümlədəki sözləri tərs sıraya düzmək üçün funksiya yazın.
 
-let reverseWordOrder="javascript öyrənmək maraqlıdır";
-console.log(reverseWordOrder.split(" ").reverse().join(" "));
+function reverseWordOrder(sentence) {
 
+    console.log(sentence.split(" ").reverse().join(" "));
+}
+
+reverseWordOrder("Javascript öyrenmek maraqlıdı")
 
 // 6)
 const users = [
-   { id: 1, name: "Orkhan Mammadov", age: 28, gender: "Male", city: "Baku", email: "orxan.m@mail.com" },
+    { id: 1, name: "Orkhan Mammadov", age: 28, gender: "Male", city: "Baku", email: "orxan.m@mail.com" },
     { id: 2, name: "Leyla Aliyeva", age: 24, gender: "Female", city: "Ganja", email: "leyla.a@mail.com" },
     { id: 3, name: "Rashad Guliyev", age: 30, gender: "Male", city: "Sumqayit", email: "reshad.q@mail.com" },
-     { id: 4, name: "Aytan Hasanova", age: 26, gender: "Female", city: "Shaki", email: "ayten.h@mail.com" },
+    { id: 4, name: "Aytan Hasanova", age: 26, gender: "Female", city: "Shaki", email: "ayten.h@mail.com" },
     { id: 5, name: "Elvin Karimov", age: 32, gender: "Male", city: "Lankaran", email: "elvin.k@mail.com" },
     { id: 6, name: "Nigar Rahimli", age: 27, gender: "Female", city: "Mingachevir", email: "nigar.r@mail.com" },
     { id: 7, name: "Tural Abbasov", age: 29, gender: "Male", city: "Barda", email: "tural.a@mail.com" },
     { id: 8, name: "Aysel Mammadova", age: 23, gender: "Female", city: "Khachmaz", email: "aysel.m@mail.com" },
     { id: 9, name: "Murad Aliyev", age: 31, gender: "Male", city: "Shamakhi", email: "murad.a@mail.com" },
-     { id: 10, name: "Gulnar Gasimova", age: 25, gender: "Female", city: "Zagatala", email: "gulnar.q@mail.com" }
- ];
+    { id: 10, name: "Gulnar Gasimova", age: 25, gender: "Female", city: "Zagatala", email: "gulnar.q@mail.com" }
+];
 // # Yaşı 30-dan kiçik olan istifadəçilərin sayını tapın
-let usersUnder30=0;
+let usersUnder30 = 0;
 users.forEach(user => {
-    if(user.age<30){
-        usersUnder30+=1
+    if (user.age < 30) {
+        usersUnder30 += 1
     }
-    
+
 });
 console.log(usersUnder30);
 
 // # İstifadəçilərin yaşları ortalamasını tapın
-let avarage =0
-users.forEach(user=>{
-    avarage+=user.age
+let avarage = 0
+users.forEach(user => {
+    avarage += user.age
 })
-console.log(avarage/users.length);
+console.log(avarage / users.length);
 
 // # Bütün istifadəçilərin e-maillərindən ibarət array yaradın
-let allEmail=[];
-users.forEach(user=>{
+let allEmail = [];
+users.forEach(user => {
     allEmail.push(user.email)
 })
 console.log(allEmail);
 
 // # Qadın istifadəçilərdən ibarət array yaradın
 const femaleUsers = users
-.filter(person => person.gender === "Female")  
+    .filter(person => person.gender === "Female")
 console.log(femaleUsers);
- 
 
 
 
-    
+
+
 // # Kişi istifadəçiləri yaşına görə sıralayın (artan)  
 
 const maleUsersSortedByAge = users
-.filter(person => person.gender === "Male")  
-.sort((a, b) => a.age - b.age); 
+    .filter(person => person.gender === "Male")
+    .sort((a, b) => a.age - b.age);
 
 console.log(maleUsersSortedByAge);
 
-       
+
 
 
 
@@ -150,12 +156,12 @@ console.log(maleUsersSortedByAge);
 
 function capitalizeFirstLetter(sentence) {
     return sentence
-        .split(" ")     
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase()) 
-        .join(" "); 
+        .split(" ")
+        .map(word => word.charAt(0).toUpperCase() + word.slice(1).toLowerCase())
+        .join(" ");
 }
-let sentence=("salam sagol")
-console.log( capitalizeFirstLetter(sentence)); 
+let sentence = ("salam sagol")
+console.log(capitalizeFirstLetter(sentence));
 
 
 
@@ -165,9 +171,9 @@ console.log( capitalizeFirstLetter(sentence));
 // console.log(convert('saLamNecesen)) -> SAlAMnECESEN
 function Convert(sentence) {
     return sentence
-        .split(" ")     
-        .map(word => word.charAt(0).toLowerCase() + word.slice(1).toUpperCase()) 
-        .join(" "); 
+        .split(" ")
+        .map(word => word.charAt(0).toLowerCase() + word.slice(1).toUpperCase())
+        .join(" ");
 }
-console.log( Convert("salam sagol")); 
+console.log(Convert("salam sagol"));
 
